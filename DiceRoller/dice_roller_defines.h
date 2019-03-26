@@ -11,6 +11,8 @@
 #define MUL (INT_MAX + 3)
 // Token for division
 #define DIV (INT_MAX + 4)
+// Token for error
+#define ERR (INT_MAX + 1)
 
 typedef unsigned int uint;
 // TODO: change uint to int

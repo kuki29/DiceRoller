@@ -10,7 +10,8 @@ Parser::~Parser()
 
 bool Parser::parse(const std::string& input)
 {
-	if (!(isdigit(input[0]) || input[0] == 'd' || input[0] == 'D'))
+	if (!(isdigit(input[0]) || input[0] == 'd' || input[0] == 'D') ||
+		(input.length() == 0))
 	{
 		// NOTE: this string is not a dice expression
 		return false;

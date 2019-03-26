@@ -20,7 +20,7 @@ public:
 	DiceRoller(const vec_p_uii& tokens);
 	~DiceRoller();
 
-	// returns (INT_MAX + 1) if something went wrong
+	// returns (ERR) if something went wrong
 	int roll();
 	void setTokens(const vec_p_uii& tokens);
 };

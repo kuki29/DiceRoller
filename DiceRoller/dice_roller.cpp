@@ -31,7 +31,7 @@ int DiceRoller::roll()
 		if (!parser.parse(str))
 		{
 			// TODO: log it
-			return INT_MAX + 1;
+			return ERR;
 		}
 	}
 	int result = 0;
@@ -63,14 +63,14 @@ int DiceRoller::roll()
 					if (token1 == 0)
 					{
 						// TODO: log it
-						return INT_MAX + 1;
+						return ERR;
 					}
 					result /= tokens[i + 1].first;
 					break;
 
 				default:
 					// TODO: log it
-					return INT_MAX + 1;
+					return ERR;
 				}
 			}
 			else 

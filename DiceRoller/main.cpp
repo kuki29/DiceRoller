@@ -7,7 +7,7 @@ int main()
 {
 	// TODO: !!!Test parser!!!
 	// TODO: !!!Test roller!!!
-	// TODO: !!!check for empty string!!!
+	// (done)TODO: !!!check for empty string!!!
 	// TODO: !!!check parsing!!!
 	// TODO: !!!check generation!!!
 	bool run = true;
@@ -17,7 +17,15 @@ int main()
 	{
 		std::getline(std::cin, user_input);
 		diceRoller = DiceRoller(user_input);
-		std::cout << "roll: " << diceRoller.roll() << std::endl;
+		int dice = diceRoller.roll();
+		if (dice != ERR)
+		{
+			std::cout << "roll: " << dice << std::endl;
+		}
+		else
+		{
+			std::cout << "you typed an invalid expression!" << std::endl;
+		}
 		diceRoller.~DiceRoller();
 	}
 	system("pause");
