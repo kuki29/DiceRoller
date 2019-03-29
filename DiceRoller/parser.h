@@ -20,7 +20,7 @@ public:
 
 private:
 	// returns number from the string or -1 if it is imposible to parse
-	int parseNumber(const std::string& string, const int start_index);
+	int parseNumber(const std::string& string, const int startIndex);
 
 	// returns amount of symbols in the number
 	inline int numLength(const int num) const;

@@ -24,6 +24,7 @@ DiceRoller::~DiceRoller()
 {
 }
 
+// IMPORTANT: refactor this shitty piece of code
 int DiceRoller::roll()
 {
 	if (!isTokensAlreadySet)
@@ -78,7 +79,15 @@ int DiceRoller::roll()
 				// TODO: make method from this
 				for (int j = 0; j < token1; j++)
 				{
-					result += (rand() % token0) + 1;
+					if (token0 != 0)
+					{
+						result += (rand() % token0) + 1;
+					}
+					else
+					{
+						// TODO: log it
+						return ERR;
+					}
 				}
 			}
 		}
@@ -86,7 +95,15 @@ int DiceRoller::roll()
 		{
 			for (int j = 0; j < token1; j++)
 			{
-				result += (rand() % token0) + 1;
+				if (token0 != 0)
+				{
+					result += (rand() % token0) + 1;
+				}
+				else
+				{
+					// TODO: log it
+					return ERR;
+				}
 			}
 		}
 	}

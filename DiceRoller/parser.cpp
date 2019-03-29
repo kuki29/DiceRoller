@@ -113,20 +113,20 @@ vec_p_uii Parser::getTokens()
 	return Tokens;
 }
 
-int Parser::parseNumber(const std::string& str, const int start_index)
+int Parser::parseNumber(const std::string& str, const int startIndex)
 {
-	if (start_index > str.length() - 1)
+	if (startIndex > str.length() - 1)
 	{
-		// NOTE: start_index is biger or equals to the last index of the string
+		// NOTE: startIndex is biger or equals to the last index of the string
 		// TODO: log this "error"
 		return -1;
 	}
 	uint result = 0;
-	for (int i = start_index; i < str.length(); i++)
+	for (int i = startIndex; i < str.length(); i++)
 	{
 		if (isdigit(str[i]))
 		{
-			result += (uint) pow(10.0f, ((int) str[i] - 48));
+			result += (uint) pow(i - startIndex + 1, 10.0f) * ((int) str[i] - 48);
 			continue;
 		}
 		else
