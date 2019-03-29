@@ -126,7 +126,8 @@ int Parser::parseNumber(const std::string& str, const int startIndex)
 	{
 		if (isdigit(str[i]))
 		{
-			result += (uint) pow(i - startIndex + 1, 10.0f) * ((int) str[i] - 48);
+			result *= 10;
+			result += (uint) (str[i] - 48);
 			continue;
 		}
 		else
