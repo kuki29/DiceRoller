@@ -8,7 +8,6 @@ Parser::~Parser()
 {
 }
 
-// TODO: fix multiply dices
 bool Parser::parse(const std::string& input)
 {
 	if (input.length() == 0 || !(isdigit(input[0]) || isDiceChar(input[0])))
@@ -49,7 +48,7 @@ bool Parser::parse(const std::string& input)
 			{
 				if (isDice && diceNumber > 0)
 				{
-					Tokens.push_back(std::make_pair(num, isDiceNumber));
+					Tokens.push_back(std::make_pair(num, diceNumber));
 					isDice = false;
 					isDiceNumber = false;
 					diceNumber = 0;

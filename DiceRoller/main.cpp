@@ -7,7 +7,6 @@ int main()
 {
 	// TODO: !!!Test parser!!!
 	// TODO: !!!Test roller!!!
-	// TODO: fix problem with understending more than one digits
 	// TODO: check generation for d3 dice, probably this is non-random
 	bool run = true;
 	std::string user_input;
