@@ -17,12 +17,12 @@ private:
 public:
 	DiceRoller();
 	DiceRoller(const std::string& str);
-	DiceRoller(const vec_p_uii& tokens);
+	DiceRoller(const vec_p_ii& tokens);
 	~DiceRoller();
 
 	// returns (ERR) if something went wrong
 	int roll();
-	void setTokens(const vec_p_uii& tokens);
+	void setTokens(const vec_p_ii& tokens);
 };
 
 #endif

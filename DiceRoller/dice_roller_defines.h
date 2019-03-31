@@ -16,9 +16,9 @@
 
 typedef unsigned int uint;
 // TODO: change uint to int
-// Pair of uint and int
-typedef std::pair<uint, int> p_uii;
-// Vector of pairs of uint and int
-typedef std::vector<p_uii> vec_p_uii;
+// Pair of int and int
+typedef std::pair<int, int> p_ii;
+// Vector of pairs of int and int
+typedef std::vector<p_ii> vec_p_ii;
 
 #endif

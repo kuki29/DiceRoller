@@ -13,7 +13,7 @@ DiceRoller::DiceRoller(const std::string& i_str)
 	isTokensAlreadySet = false;
 }
 
-DiceRoller::DiceRoller(const vec_p_uii& tokens)
+DiceRoller::DiceRoller(const vec_p_ii& tokens)
 {
 	std::srand((uint) time(NULL));
 	parser.Tokens = tokens;
@@ -36,12 +36,12 @@ int DiceRoller::roll()
 		}
 	}
 	int result = 0;
-	const vec_p_uii& tokens = parser.Tokens;
+	const vec_p_ii& tokens = parser.Tokens;
 	for (int i = 0; i < tokens.size(); i++)
 	{
 		int token0 = tokens[i].first;
 		int token1 = tokens[i].second;
-		if (parser.isOperation(token0))
+		if (Parser::isOperation(token0))
 		{
 			if (tokens[i + 1].first == 1)
 			{
@@ -110,7 +110,7 @@ int DiceRoller::roll()
 	return result;
 }
 
-void DiceRoller::setTokens(const vec_p_uii& tokens)
+void DiceRoller::setTokens(const vec_p_ii& tokens)
 {
 	parser.Tokens = tokens;
 }
