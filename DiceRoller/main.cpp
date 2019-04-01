@@ -7,7 +7,8 @@ int main()
 {
 	// TODO: !!!Test parser!!!
 	// TODO: !!!Test roller!!!
-	// TODO: check generation for d3 dice, probably this is non-random
+	// TODO: check generation for dices, probably it is not random
+	// TODO: fix bug with dice without amount number (done)
 	bool run = true;
 	std::string user_input;
 	DiceRoller diceRoller;

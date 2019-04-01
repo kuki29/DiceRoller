@@ -59,6 +59,11 @@ bool Parser::parse(const std::string& input)
 					return false;
 				}
 			}
+			else if (isDice)
+			{
+				Tokens.push_back(std::make_pair(num, 1));
+				isDice = false;
+			}
 			else if (isOp)
 			{
 				Tokens.push_back(std::make_pair(1, num));
@@ -107,13 +112,13 @@ int Parser::parseNumber(const std::string& str, const int startIndex)
 		// TODO: log this "error"
 		return -1;
 	}
-	uint result = 0;
+	int result = 0;
 	for (int i = startIndex; i < str.length(); i++)
 	{
 		if (isdigit(str[i]))
 		{
 			result *= 10;
-			result += (uint) (str[i] - 48);
+			result += (int) (str[i] - 48);
 			continue;
 		}
 		else
