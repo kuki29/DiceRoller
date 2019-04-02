@@ -1,3 +1,5 @@
+#pragma warning(disable : 4996)
+
 #include <iostream>
 #include <string>
 #include <cstdlib>
@@ -8,7 +10,6 @@ int main()
 {
 	// TODO: !!!Test parser!!!
 	// TODO: !!!Test roller!!!
-	// TODO: check generation for dices, probably it is not random
 	// TODO: probably all operation works like addition
 	bool run = true;
 	std::string user_input;

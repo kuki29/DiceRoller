@@ -95,11 +95,18 @@ void DiceRoller::setTokens(const vec_p_ii& tokens)
 int DiceRoller::rollDices(int dice, int amount)
 {
 	int result = 0;
+	int tmp = 0;
 	for (int i = 0; i < amount; i++)
 	{
 		if (dice != 0)
 		{
-			result += (std::rand() % dice) + 1;
+			// NOTE: maybe it is too complicated, but it gives pretty random numbers
+			tmp = std::rand() + time(NULL) % (std::rand() + 1) + 1;
+			tmp = (std::rand() % (tmp + 1)) * (time(NULL) % (std::rand() % 3 + 1) + 2);
+			tmp = (std::rand() + tmp) / ((std::rand() >> 
+				((std::rand() % 
+				(std::rand() % (time(NULL) % (rand() % 31 + 2) + 3) + 2) + 4) % 31)) + 4);
+			result += (tmp % dice) + 1;
 		}
 		else
 		{
