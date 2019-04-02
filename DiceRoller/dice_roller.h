@@ -23,6 +23,7 @@ public:
 	// returns (ERR) if something went wrong
 	int roll();
 	void setTokens(const vec_p_ii& tokens);
+	int rollDices(int dice, int amount = 1);
 };
 
 #endif

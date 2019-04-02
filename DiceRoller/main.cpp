@@ -8,13 +8,17 @@ int main()
 	// TODO: !!!Test parser!!!
 	// TODO: !!!Test roller!!!
 	// TODO: check generation for dices, probably it is not random
-	// TODO: fix bug with dice without amount number (done)
+	// TODO: probably all operation works like addition
 	bool run = true;
 	std::string user_input;
 	DiceRoller diceRoller;
 	while (run)
 	{
 		std::getline(std::cin, user_input);
+		if (user_input == "exit")
+		{
+			break;
+		}
 		diceRoller = DiceRoller(user_input);
 		int dice = diceRoller.roll();
 		if (dice != ERR)

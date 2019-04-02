@@ -76,35 +76,12 @@ int DiceRoller::roll()
 			}
 			else 
 			{
-				// TODO: make method from this
-				for (int j = 0; j < token1; j++)
-				{
-					if (token0 != 0)
-					{
-						result += (rand() % token0) + 1;
-					}
-					else
-					{
-						// TODO: log it
-						return ERR;
-					}
-				}
+				result += rollDices(token0, token1);
 			}
 		}
 		else
 		{
-			for (int j = 0; j < token1; j++)
-			{
-				if (token0 != 0)
-				{
-					result += (rand() % token0) + 1;
-				}
-				else
-				{
-					// TODO: log it
-					return ERR;
-				}
-			}
+			result += rollDices(token0, token1);
 		}
 	}
 	return result;
@@ -113,4 +90,22 @@ int DiceRoller::roll()
 void DiceRoller::setTokens(const vec_p_ii& tokens)
 {
 	parser.Tokens = tokens;
+}
+
+int DiceRoller::rollDices(int dice, int amount)
+{
+	int result = 0;
+	for (int i = 0; i < amount; i++)
+	{
+		if (dice != 0)
+		{
+			result += (std::rand() % dice) + 1;
+		}
+		else
+		{
+			// TODO: log it
+			return ERR;
+		}
+	}
+	return result;
 }
