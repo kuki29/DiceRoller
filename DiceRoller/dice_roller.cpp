@@ -109,3 +109,9 @@ int DiceRoller::rollDices(int dice, int amount)
 	}
 	return result;
 }
+
+void initDiceRollerRandom()
+{
+	std::srand((uint) time(NULL));
+	std::srand((uint) time(NULL) + std::rand());
+}

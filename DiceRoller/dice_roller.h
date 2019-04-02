@@ -24,6 +24,9 @@ public:
 	int roll();
 	void setTokens(const vec_p_ii& tokens);
 	int rollDices(int dice, int amount = 1);
+
+private:
+	void initDiceRollerRandom();
 };
 
 #endif
