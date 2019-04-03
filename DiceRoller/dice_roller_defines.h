@@ -15,7 +15,6 @@
 #define ERR (INT_MIN + 1)
 
 typedef unsigned int uint;
-// TODO: change uint to int
 // Pair of int and int
 typedef std::pair<int, int> p_ii;
 // Vector of pairs of int and int

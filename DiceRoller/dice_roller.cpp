@@ -24,7 +24,6 @@ DiceRoller::~DiceRoller()
 {
 }
 
-// IMPORTANT: refactor this shitty piece of code
 int DiceRoller::roll()
 {
 	if (!isTokensAlreadySet)

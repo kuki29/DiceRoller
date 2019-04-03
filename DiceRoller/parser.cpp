@@ -109,8 +109,7 @@ int Parser::parseNumber(const std::string& str, const int startIndex)
 	if (startIndex > str.length() - 1)
 	{
 		// NOTE: startIndex is biger or equals to the last index of the string
-		// TODO: log this "error"
-		return -1;
+		return ERR;
 	}
 	int result = 0;
 	for (int i = startIndex; i < str.length(); i++)
