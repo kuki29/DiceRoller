@@ -8,8 +8,6 @@
 
 int main()
 {
-	// TODO: !!!Test parser!!!
-	// TODO: !!!Test roller!!!
 	// TODO: probably all operation works like addition
 	bool run = true;
 	std::string user_input;

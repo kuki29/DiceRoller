@@ -78,7 +78,7 @@ inline int Parser::opSymbolToMacros(char c)
 	case '/':
 		return DIV;
 	default:
-		return -1;
+		return ERR;
 	}
 }
 

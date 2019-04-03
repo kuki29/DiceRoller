@@ -41,42 +41,53 @@ int DiceRoller::roll()
 	{
 		int token0 = tokens[i].first;
 		int token1 = tokens[i].second;
-		if (Parser::isOperation(token0))
+		if (Parser::isOperation(token1))
 		{
-			if (tokens[i + 1].first == 1)
+			int num = 0;
+			if (i < tokens.size() - 1)
 			{
-				switch (token1)
+				i++;
+			}
+			else
+			{
+				return ERR;
+			}
+			if (tokens[i].first == 1 && tokens[i].second >= 0)
+			{
+				num = tokens[i].second;
+			}
+			else
+			{
+				num = rollDices(tokens[i].first, tokens[i].second);
+			}
+
+			switch (token1)
+			{
+			case ADD:
+				result += num;
+				break;
+
+			case SUB:
+				result -= num;
+				break;
+
+			case MUL:
+				// TODO: think about alert if it equals 0
+				result *= num;
+				break;
+
+			case DIV:
+				if (token1 == 0)
 				{
-				case ADD:
-					result += tokens[i + 1].first;
-					break;
-
-				case SUB:
-					result -= tokens[i + 1].first;
-					break;
-
-				case MUL:
-					// TODO: think about alert if it equals 0
-					result *= tokens[i + 1].first;
-					break;
-
-				case DIV:
-					if (token1 == 0)
-					{
-						// TODO: log it
-						return ERR;
-					}
-					result /= tokens[i + 1].first;
-					break;
-
-				default:
 					// TODO: log it
 					return ERR;
 				}
-			}
-			else 
-			{
-				result += rollDices(token0, token1);
+				result /= num;
+				break;
+
+			default:
+				// TODO: log it
+				return ERR;
 			}
 		}
 		else
